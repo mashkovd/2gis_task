@@ -15,15 +15,15 @@ plotly|Dash
 docker docs
 1. https://docs.docker.com/develop/develop-images/dockerfile_best-practices/https://docs.docker.com/develop/develop-images/dockerfile_best-practices/
 
-##Docker
-####Собираем images
+## Docker
+#### Собираем images
 docker build -t 2gis:ex .
-####Запускаем контейнер
+#### Запускаем контейнер
 docker run -v /{абсолютный путь к каталогу csv в проекте}:/app/csv --name 2gis -p 127.0.0.1:8000:8000/tcp 2gis:ex
 
-##График 
+## График 
 Данные о кол-ве рабочего времени в разрезе людей и времени доступен по [ссылке](http://127.0.0.1:8000/)
-##CLI
+## CLI
 Сформировать данные в файл 'sample.xml' по 7 людям в интервале дат '2020-01-01' - '2020-09-30'. 
 После этого обновите страницу графика, данные обновятся.
 
