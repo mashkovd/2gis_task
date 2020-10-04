@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="people" type="peopleType"/>
+  <xs:complexType name="personType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="start"/>
+      <xs:element type="xs:string" name="end"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="full_name" use="optional"/>
+  </xs:complexType>
+  <xs:complexType name="peopleType">
+    <xs:sequence>
+      <xs:element type="personType" name="person" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
