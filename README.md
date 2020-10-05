@@ -17,10 +17,21 @@ docker docs
 
 ## Docker
 #### Собираем images
-docker build -t 2gis:ex .
-#### Запускаем контейнер
-docker run -v /{абсолютный путь к каталогу csv в проекте}:/app/csv --name 2gis -p 127.0.0.1:8000:8000/tcp 2gis:ex
+```powershell
+docker build -t local/2gis:v1 .
+```
 
+#### Запускаем контейнер
+```powershell
+docker run -v {путь к папке csv с результатами расчета}:/app/csv --name 2gis -p 127.0.0.1:8000:8000/tcp local/2gis:v1
+```
+{путь к папке csv с результатами расчета} - /C/Users/Mashk/PycharmProjects/2gis_ex/csv(пример)
+
+#### Можно стянуть готовый images и запустить
+```powershell
+docker pull mashkovdm/2gis:v1 & docker run -v {путь к папке csv с результатами расчета}:/app/csv --name 2gis -p 127.0.0.1:8000:8000/tcp mashkovdm/2gis:v1
+```
+{путь к папке csv с результатами расчета} - /C/Users/Mashk/PycharmProjects/2gis_ex/csv(пример)
 ## График 
 Данные о кол-ве рабочего времени в разрезе людей и времени доступен по [ссылке](http://127.0.0.1:8000/)
 ## CLI
